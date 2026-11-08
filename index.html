@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumière Salon | Book Your Appointment</title>
+<meta name="description" content="Lumière Salon - hair, skin and nails. Choose your service, pick a time and book online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("aPvdNoGCyD1j7nKVE");
+   })();
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">Lumi&egrave;re<span>.</span></div>
+    <small>Open daily &middot; 10 AM &ndash; 8 PM</small>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Look good. <em>Feel better.</em></h1>
+    <p>Book your appointment in four easy steps. No calls, no waiting.</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="steps" id="steps"></div>
+
+  <div class="layout">
+    <main class="panel" id="panel">
+
+      <section data-step="1">
+        <h2>Choose a service</h2>
+        <p class="sub">Select what you'd like to book.</p>
+        <div class="cats" id="cats"></div>
+        <div class="services" id="services"></div>
+      </section>
+
+      <section data-step="2" class="hidden">
+        <h2>Pick your stylist</h2>
+        <p class="sub">Choose a favourite or let us assign the best available.</p>
+        <div class="stylists" id="stylists"></div>
+      </section>
+
+      <section data-step="3" class="hidden">
+        <h2>Date &amp; time</h2>
+        <p class="sub">Greyed-out slots are already booked.</p>
+        <div class="dates" id="dates"></div>
+        <div class="slots" id="slots"></div>
+      </section>
+
+      <section data-step="4" class="hidden">
+        <h2>Your details</h2>
+        <p class="sub">We'll send your confirmation here.</p>
+        <form class="fields" id="form" novalidate>
+          <label>Full name
+            <input name="name" type="text" placeholder="Your name" required>
+            <span class="err" data-e="name"></span>
+          </label>
+          <label>Phone / WhatsApp
+            <input name="phone" type="tel" placeholder="03XX XXXXXXX" required>
+            <span class="err" data-e="phone"></span>
+          </label>
+          <label>Email Address
+            <input name="email" type="email" placeholder="you@example.com" required>
+            <span class="err" data-e="email"></span>
+          </label>
+          <label>Notes (optional)
+            <textarea name="notes" rows="3" placeholder="Anything we should know?"></textarea>
+          </label>
+        </form>
+      </section>
+
+      <section data-step="5" class="hidden confirm">
+        <div class="tick">&#10003;</div>
+        <h2>You're all booked!</h2>
+        <p id="doneText"></p>
+        <div class="ref" id="ref"></div>
+        <div style="margin-top:28px"><button class="btn btn-g" id="restart">Book another appointment</button></div>
+      </section>
+
+      <div class="actions" id="actions">
+        <button class="btn btn-g" id="back">Back</button>
+        <button class="btn btn-p" id="next" disabled>Continue</button>
+      </div>
+    </main>
+
+    <aside class="panel summary">
+      <h3>Booking summary</h3>
+      <div id="summary"></div>
+      <div class="sum-total"><span>Total</span><b id="total">$0</b></div>
+      <p class="note">Pay at the salon. Free cancellation up to 4 hours before your appointment.</p>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="container">&copy; <span id="y"></span> Lumi&egrave;re Salon &middot;</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
